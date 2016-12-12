@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>TR versioning</title>
+<link rel="stylesheet" type="text/css" href="/StyleSheets/TR/2016/base.css" />
+<h1>TR versioning for leveled specifications</h1>
+<section>
+<h2 id=introduction>Problem</h2>
+<p>More and more WGs tend to publish different versions of the same specification in order to reach the status of Recommendation as fast as possible. All the features that do not pass the REC-track requirements are moved to a different version of the specification so they don't prevent earlier versions from going forward.</p>
+<p>From the publication side, each level is treated as a different specification, meaning there's no clear relationship between <code>shortname-1</code> and <code>shortname-2</code>. This is confusing on several points:</p>
+<ul>
+  <li>it is up to the WG to decide what /TR/shortname should point to
+  <li>a web developer who's not familiar with W3C won't know why there are different levels and which spec he should be looking at
+  <li>editor's draft can be different between the different levels (eg. <a href="https://www.w3.org/TR/service-workers/">service-workers</a> and <a href="https://www.w3.org/TR/service-workers-1/">service-workers-1</a>)
+</ul>
+<p>See also the thread started by <a href="https://lists.w3.org/Archives/Public/spec-prod/2016OctDec/thread.html#msg15">Tobie</a>.
+</p>
+
+</section>
+
+<section>
+<h2 id="design">Design principle</h2>
+<ul>
+  <li>Normalize the latest versions for leveled specifications
+  <li>Dissociate those from the patent policy
+  <li>Provide a simple way to point to the most stable and unstable versions
+  <li>Provide details of the different versions and target different types of audience:
+    <ul>
+      <li>Browser implementors want the latest editor's draft
+      <li>Web developers use the latest stable version with implemented features
+      <li><a href="http://www.specref.org/">specref.org</a> provides an easy-to-use spec reference database
+    </ul>
+</ul>
+</section>
+
+<section>
+<h2 id=proposal1>Proposal 1</h2>
+<p>One way to solve the problem is to introduce new links that are clearly defined so people know what they can expect when they browse these links.</p>
+<ul>
+  <li>/TR/shortname/: points to latest stable version (REC) or most advanced document on REC-track
+  <li>/TR/shortname/latest/: latest version under development (might point to /TR/shortname/ if the specification is no longer under development)
+  <li>/TR/shortname/ed/: editor's draft (returs 404 if none available)
+  <li>/TR/shortname/all: list of the different versions (cover page)
+</ul>
+<p><strong>Note</strong>&nbsp;:&nbsp;New REC editions should be handled as a new level of the specification.</p>
+
+<h2 id=obsolete>How do we mark specs as obsolete?</h2>
+
+<p>The <a href="https://www.w3.org/2003/01/republishing/">edit in-place policy</a> allows modification in case of "Some visible status updates, such as indicating newer versions" so we can add a deprecation note to the <em>old</em> stable specification (eg. <a href="html5.html">html5</a>).
+</p>
+</section>
+
+<section>
+  <h1 id="examples">Real life examples</h1>
+  <h2 id="example-html">HTML</h2>
+  <ul>
+    <li>/TR/html5/ redirects to /TR/html51/ (current latest REC)
+    <li>/TR/html/ redirects to /TR/html5/
+    <li>we create /TR/html50/ to serve the HTML5.0 specification
+    <li>/TR/html5/latest/ redirects to /TR/html52/
+    <li>/TR/html5/ed/ redirects to <a href="https://w3c.github.io/html/">https://w3c.github.io/html/</a>
+    <li>/TR/html5/all returns an index (eg. <a href="all.html">html5</a>)
+  </ul>
+
+  <h2 id="example-csp">CSP</h2>
+  <ul>
+    <li>/TR/CSP/ redirects to /TR/CSP2/ (currently PR)
+    <li>/TR/CSP/latest/ redirects to /TR/CSP3/
+    <li>/TR/CSP/ed/ redirects to <a href="https://w3c.github.io/webappsec-csp/">https://w3c.github.io/webappsec-csp/</a>
+    <li>/TR/CSP/all: cover page for CSP listing CSP1, CSP2 and CSP3
+  </ul>
+
+  <h2 id="example-svg">CSS Cascading and Inheritance</h2>
+  <ul>
+    <li>/TR/css-cascade/ redirects to /TR/css-cascade-3/ (css-cascade-3 and css-cascade-4 are both CR but css-cascade-3 is the most recent one)
+    <li>/TR/css-cascade/latest/ redirects to /TR/css-cascade-4/
+    <li>/TR/css-cascade/ed/ redirects to <a href="http://dev.w3.org/csswg/css-cascade/">http://dev.w3.org/csswg/css-cascade/</a>
+    <li>/TR/css-cascade/all: cover page for css-cascade listing css-cascade-3 and css-cascade-4
+  </ul>
+</section>
+</html>
