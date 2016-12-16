@@ -3,6 +3,9 @@
 <meta charset="utf-8">
 <title>TR versioning</title>
 <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base.css" />
+<style>
+.u {text-decoration:underline;}
+</style>
 <h1>TR versioning for leveled specifications</h1>
 <section>
 <h2 id=introduction>Problem</h2>
@@ -75,30 +78,55 @@
 
 <section>
   <h1 id="examples">Real life examples</h1>
+  <p>The following examples show how the links would look like if we go with proposal 1 or proposal 2. As explained above, proposal 3 is a simple mix of both proposals.</p>
   <h2 id="example-html">HTML</h2>
   <ul>
-    <li>/TR/html5/ redirects to /TR/html51/ (current latest REC)
     <li>/TR/html/ redirects to /TR/html5/
     <li>we create /TR/html50/ to serve the HTML5.0 specification
-    <li>/TR/html5/latest/ redirects to /TR/html52/
     <li>/TR/html5/ed/ redirects to <a href="https://w3c.github.io/html/">https://w3c.github.io/html/</a>
     <li>/TR/html5/all returns an index (eg. <a href="all.html">html5</a>)
+  </ul>
+  <p class="u">With proposal 1:</p>
+  <ul>
+    <li>/TR/html5/ redirects to /TR/html51/ (current latest REC)
+    <li>/TR/html5/latest/ redirects to /TR/html52/
+  </ul>
+  <p class="u">With proposal 2:</p>
+  <ul>
+    <li>/TR/html5/ redirects to /TR/html52/
+    <li>/TR/html5/stable/ redirects to /TR/html51/ (current latest REC)
   </ul>
 
   <h2 id="example-csp">CSP</h2>
   <ul>
-    <li>/TR/CSP/ redirects to /TR/CSP2/ (currently PR)
-    <li>/TR/CSP/latest/ redirects to /TR/CSP3/
     <li>/TR/CSP/ed/ redirects to <a href="https://w3c.github.io/webappsec-csp/">https://w3c.github.io/webappsec-csp/</a>
     <li>/TR/CSP/all: cover page for CSP listing CSP1, CSP2 and CSP3
+  </ul>
+  <p class="u">With proposal 1:</p>
+  <ul>
+    <li>/TR/CSP/ redirects to /TR/CSP2/ (currently REC)
+    <li>/TR/CSP/latest/ redirects to /TR/CSP3/
+  </ul>
+  <p class="u">With proposal 2:</p>
+  <ul>
+    <li>/TR/CSP/ redirects to /TR/CSP3/
+    <li>/TR/CSP/stable/ redirects to /TR/CSP2/ (currently REC)
   </ul>
 
   <h2 id="example-svg">CSS Cascading and Inheritance</h2>
   <ul>
-    <li>/TR/css-cascade/ redirects to /TR/css-cascade-3/ (css-cascade-3 and css-cascade-4 are both CR but css-cascade-3 is the most recent one)
-    <li>/TR/css-cascade/latest/ redirects to /TR/css-cascade-4/
     <li>/TR/css-cascade/ed/ redirects to <a href="http://dev.w3.org/csswg/css-cascade/">http://dev.w3.org/csswg/css-cascade/</a>
     <li>/TR/css-cascade/all: cover page for css-cascade listing css-cascade-3 and css-cascade-4
+  </ul>
+  <p class="u">With proposal 1:</p>
+  <ul>
+    <li>/TR/css-cascade/ redirects to /TR/css-cascade-3/ (css-cascade-3 and css-cascade-4 are both CR but css-cascade-3 is the most recent one)
+    <li>/TR/css-cascade/latest/ redirects to /TR/css-cascade-4/
+  </ul>
+  <p class="u">With proposal 2:</p>
+  <ul>
+    <li>/TR/css-cascade/ redirects to /TR/css-cascade-4/
+    <li>/TR/css-cascade/stable/ to /TR/css-cascade-3/
   </ul>
 </section>
 </html>
